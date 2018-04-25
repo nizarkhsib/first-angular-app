@@ -1,0 +1,23 @@
+<button (click)="toggleInfos()">{{showInfo? "Hide infos":"Show Student info"}}</button>
+<div *ngIf="showInfo">
+  <h2>Your personal information </h2>
+  <ul>
+    <strong><li>{{name}}</li></strong>
+    <strong><li>{{email}} </li></strong>
+  </ul>
+   
+<ul>
+  <li *ngFor="let hobby of hobbies, let i=index">
+  {{hobby}}
+  <button (click)="deleteHobby(i)">Delete</button>
+  </li>
+</ul>
+</div>
+
+
+
+<form>
+    <label>Add Hobby</label>
+    <input type="text" #hobby/>
+    <button (click)="addHobby(hobby.value)">Add</button>
+</form>

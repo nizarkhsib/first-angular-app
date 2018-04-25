@@ -1,0 +1,47 @@
+<fieldset>
+        <fieldset> 
+                <legend>Add Student</legend>     
+                        <form (submit)="addStudent(student)">
+                            
+                            
+                            
+                            <label>Firstname :</label> 
+                            <input type="text" name="firstname" [(ngModel)]="student.firstname"/><br/>
+
+                            <label>Lastname :</label> 
+                            <input type="text" name="lastname" [(ngModel)]="student.lastname"/><br/>
+                            
+                            <label>Email :</label> 
+                            <input type="text" name="email" [(ngModel)]="student.email"/><br/>
+                            
+                            <label>Cin :</label> 
+                            <input type="text" name="cin" [(ngModel)]="student.cin"/><br/>
+                            
+                            <button>Add Student</button>
+                        </form>
+        </fieldset>
+
+        <table border="1">
+            <tr>
+                <td>firstname</td>
+                <td>lastname</td>
+                <td>Email</td>
+                <td>CIN</td>
+                <td>Delete</td>
+            </tr>
+            <tr *ngFor="let student of students, let i=index">
+                    <td>{{student.firstname}}</td>
+                    <td>{{student.lastname}}</td>
+                    <td>{{student.email}}</td>
+                    <td>{{student.cin}}</td>
+                    <td><button (click)="deleteStudent(i)">Delete</button></td>
+            </tr>
+
+          
+            
+        </table>
+               
+       
+      
+
+</fieldset>
